@@ -5,26 +5,26 @@ import {
   ReduxState,
   AppRoutes,
   AppTheme,
-} from './appSetup';
+  ServerContext,
+} from "./appSetup";
 
-import {
-  Navbar,
-  Footer,
-} from './components';
+import { Navbar, Footer } from "./components";
 
 export const App: FC = () => {
   return (
-    <ReduxState>
-      <AppTheme>
-        <div id="app"> 
-          <Navbar />
-          <div>
-            <AppRoutes />
+    <ServerContext>
+      <ReduxState>
+        <AppTheme>
+          <div id='app'>
+            <Navbar />
+            <div>
+              <AppRoutes />
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-      </AppTheme>
-      <GlobalStyles />
-    </ReduxState>
+        </AppTheme>
+        <GlobalStyles />
+      </ReduxState>
+    </ServerContext>
   );
-}
+};
